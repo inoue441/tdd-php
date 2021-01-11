@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  php:
+    build: ./docker/php
+    volumes:
+      - ./:/opt
+    working_dir: /opt
+
+  composer:
+    image: composer:2
+    volumes:
+      - ./:/app
