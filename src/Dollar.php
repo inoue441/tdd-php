@@ -2,6 +2,8 @@
 
 class Dollar
 {
+    public int $amount;
+
     public function __construct(int $amount)
     {
 
