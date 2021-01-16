@@ -1,6 +1,6 @@
 <?php
 
-class Dollar
+class Dollar extends Money
 {
     private int $amount;
 
