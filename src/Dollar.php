@@ -11,11 +11,4 @@ class Dollar extends Money
     {
         return new Dollar($this->amount * $multiplier);
     }
-
-    public function equals(Object $object)
-    {
-        // NOTE: 原書では `Dollar dollar = (Dollar) object;` (キャスト)
-        $money = $object;
-        return $this->amount === $money->amount;
-    }
 }
