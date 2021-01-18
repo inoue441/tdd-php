@@ -34,7 +34,7 @@ class Money
         // NOTE: 原書では `Dollar dollar = (Dollar) object;` (キャスト)
         $money = $object;
         return $this->amount === $money->amount
-            && get_class($this) === get_class($object);
+            && $this->currency() === $money->currency();
     }
 
     /**
