@@ -6,6 +6,11 @@ abstract class Money
 
     public abstract function times(int $multiplier);
 
+    /**
+     * @return string
+     */
+    public abstract function currency();
+
     public function equals(Object $object)
     {
         // NOTE: 原書では `Dollar dollar = (Dollar) object;` (キャスト)
