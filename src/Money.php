@@ -16,9 +16,13 @@ class Money
         $this->currency = $currency;
     }
 
+    /**
+     * @param  int  $multiplier
+     * @return Money
+     */
     public function times(int $multiplier)
     {
-        return null;
+        return new Money($this->amount * $multiplier, $this->currency);
     }
 
     /**
