@@ -1,8 +1,10 @@
 <?php
 
-class Money
+abstract class Money
 {
     protected int $amount;
+
+    public abstract function times(int $multiplier);
 
     public function equals(Object $object)
     {
