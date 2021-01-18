@@ -1,6 +1,6 @@
 <?php
 
-abstract class Money
+class Money
 {
     protected int $amount;
     protected string $currency;
@@ -16,7 +16,10 @@ abstract class Money
         $this->currency = $currency;
     }
 
-    public abstract function times(int $multiplier);
+    public function times(int $multiplier)
+    {
+        return null;
+    }
 
     /**
      * @return string
@@ -49,5 +52,10 @@ abstract class Money
     public static function franc(int $amount)
     {
         return new Franc($amount, 'CHF');
+    }
+
+    public function __toString()
+    {
+        return $this->amount . ' ' . $this->currency;
     }
 }
