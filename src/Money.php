@@ -14,6 +14,10 @@ abstract class Money
             && get_class($this) === get_class($object);
     }
 
+    /**
+     * @param  int  $amount
+     * @return Money
+     */
     public static function dollar(int $amount)
     {
         return new Dollar($amount);
