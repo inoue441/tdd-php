@@ -2,7 +2,7 @@
 
 class Franc extends Money
 {
-    public function __construct(int $amount)
+    public function __construct(int $amount, string $currency)
     {
         $this->amount = $amount;
         $this->currency = 'CHF';
@@ -14,6 +14,6 @@ class Franc extends Money
      */
     public function times(int $multiplier)
     {
-        return new Franc($this->amount * $multiplier);
+        return Money::franc($this->amount * $multiplier);
     }
 }
