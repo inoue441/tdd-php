@@ -5,6 +5,17 @@ abstract class Money
     protected int $amount;
     protected string $currency;
 
+    /**
+     * Money constructor.
+     * @param  int  $amount
+     * @param  string  $currency
+     */
+    public function __construct(int $amount, string $currency)
+    {
+        $this->amount = $amount;
+        $this->currency = $currency;
+    }
+
     public abstract function times(int $multiplier);
 
     /**
