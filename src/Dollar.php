@@ -7,6 +7,10 @@ class Dollar extends Money
         $this->amount = $amount;
     }
 
+    /**
+     * @param  int  $multiplier
+     * @return Money
+     */
     public function times(int $multiplier)
     {
         return new Dollar($this->amount * $multiplier);
