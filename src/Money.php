@@ -11,4 +11,9 @@ class Money
         return $this->amount === $money->amount
             && get_class($this) === get_class($object);
     }
+
+    public static function dollar(int $amount)
+    {
+        return new Dollar($amount);
+    }
 }
