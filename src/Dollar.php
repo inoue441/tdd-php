@@ -2,9 +2,12 @@
 
 class Dollar extends Money
 {
+    private string $currency;
+
     public function __construct(int $amount)
     {
         $this->amount = $amount;
+        $this->currency = 'USD';
     }
 
     /**
@@ -18,6 +21,6 @@ class Dollar extends Money
 
     public function currency()
     {
-        return 'USD';
+        return $this->currency;
     }
 }
