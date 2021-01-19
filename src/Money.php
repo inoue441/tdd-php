@@ -1,6 +1,6 @@
 <?php
 
-class Money
+class Money implements Expression
 {
     protected int $amount;
     protected string $currency;
@@ -27,7 +27,7 @@ class Money
 
     /**
      * @param  Money  $added
-     * @return Money
+     * @return Expression
      */
     public function plus(Money $added)
     {
