@@ -29,9 +29,9 @@ class Money implements Expression
      * @param  Money  $added
      * @return Expression
      */
-    public function plus(Money $added)
+    public function plus(Money $addend)
     {
-        return new Money($this->amount + $added->amount, $this->currency);
+        return new Sum($this, $addend);
     }
 
     /**
