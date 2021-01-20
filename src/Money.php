@@ -35,6 +35,15 @@ class Money implements Expression
     }
 
     /**
+     * @param  string  $to
+     * @return $this
+     */
+    public function reduce(string $to)
+    {
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function currency()
