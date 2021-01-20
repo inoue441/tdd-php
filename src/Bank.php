@@ -6,7 +6,6 @@ class Bank
     {
         /** @var Sum $sum */
         $sum = $source;
-        $amount = $sum->augend->amount + $sum->addend->amount;
-        return Money::dollar($amount);
+        return $sum->reduce($to);
     }
 }
