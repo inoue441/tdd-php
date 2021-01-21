@@ -2,6 +2,8 @@
 
 class Bank
 {
+    private $rates = [];
+
     public function reduce(Expression $source, string $to)
     {
         return $source->reduce($this, $to);
@@ -9,7 +11,10 @@ class Bank
 
     public function addRate(string $from, string $to, int $rate)
     {
-
+        $this->rates[] = [
+            'pair' => new Pair($from, $to),
+            'rate' => $rate,
+        ];
     }
 
     /**
@@ -19,6 +24,21 @@ class Bank
      */
     public function rate(string $from, string $to): int
     {
-        return ($from === "CHF" && $to === "USD") ? 2 : 1;
+        if ($from === $to) {
+            return 1;
+        }
+
+        /**
+         * @var Pair $pair
+         * @var int $rate
+         */
+        foreach ($this->rates as $item) {
+            $pair = $item['pair'];
+            if ($pair->from === $from && $pair->to === $to) {
+                return $item['rate'];
+            }
+        }
+
+        return  1;
     }
 }
