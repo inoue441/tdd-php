@@ -2,5 +2,5 @@
 
 interface Expression
 {
-    function reduce(string $to);
+    function reduce(Bank $bank, string $to);
 }
