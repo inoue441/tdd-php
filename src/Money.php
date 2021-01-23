@@ -18,9 +18,9 @@ class Money implements Expression
 
     /**
      * @param  int  $multiplier
-     * @return Money
+     * @return Expression
      */
-    public function times(int $multiplier)
+    public function times(int $multiplier): Expression
     {
         return new Money($this->amount * $multiplier, $this->currency);
     }
