@@ -16,6 +16,11 @@ class Sum implements Expression
         $this->addend = $addend;
     }
 
+    function plus(Expression $addend): Expression
+    {
+        return null;
+    }
+
     /**
      * @param  Bank  $bank
      * @param  string  $to
